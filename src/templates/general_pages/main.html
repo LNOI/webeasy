@@ -1,0 +1,40 @@
+{% extends "shared/base.html" %}
+{% block page_content %}
+<h1 style="text-align: center;" >Nhom07</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Major</th>
+      </tr>
+    </thead>
+    <tbody id="tbody_content">
+    
+    </tbody>
+  </table>
+  <div style="width:480px;margin: auto;"><iframe allow="fullscreen" frameBorder="0" height="270" src="https://giphy.com/embed/8CYD7zQOYECt2UolVp/video" width="480"></iframe></div>
+<script>
+      $.ajax({
+        type: "POST",
+        url: "/sync_data",
+        data: {}
+    
+      }).done(function (data) {
+         data.forEach(e =>{
+          document.getElementById("tbody_content").innerHTML+=`
+                      <tr>
+                        <th scope="row">#</th>
+                        <td>${e[0]}</td>
+                        <td>${e[1]}</td>
+                        <td>${e[2]}</td>
+                      </tr>
+          `
+         })
+        
+      })
+    
+          
+</script>
+{% endblock %}

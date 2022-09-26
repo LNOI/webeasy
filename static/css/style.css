@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.alert_form{
+    position: fixed;
+    width: 500px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px; /* Negative half of height. */
+    margin-left: -250px; /* Negative half of width. */
+}
+form button{
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+#table_historical
+{
+    overflow-y: auto;
+    height: 500px;
+}
+
